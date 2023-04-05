@@ -1,0 +1,18 @@
+# ---> Python
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+.idea/*
+.idea
+*.iml
+db.sqlite3
+__pycache__
+*.pyc
+venv
+static/captcha/*
+test/*
+tmp/*
+.DS_Store
+*.log
+
