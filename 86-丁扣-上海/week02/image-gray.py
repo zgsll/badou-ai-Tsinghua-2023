@@ -84,7 +84,6 @@ class ImageFactory:
         plt.subplot(235)
         plt.imshow(img_binary, cmap='gray')
         plt.title("skimage二值化展示")
-        # return img_binary
 
     def img_binary_by_cv2_gray(self):
         """ 自己构思了使用了均值 进行二值化 """
