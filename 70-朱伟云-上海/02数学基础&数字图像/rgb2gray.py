@@ -17,7 +17,6 @@ def rgb2gray(img):
 
     return gray_img
 
-
 # 加载RGB图像
 img = Image.open("pic/1.png")
 # 将RGB图像转换为灰度图像
