@@ -1,0 +1,30 @@
+232服务器账号密码：tongban；tongban
+@董飞 使用https://github.com/ultralytics/ultralytics，yolov8训练图像的模糊度评估分类模型。
+目的：初步完成一个用于数据删选的模型（目前拿到的数据没有经过清晰度删选，但是大部分还是清晰的）
+数据：
+232服务器：/opt/data/tb/yolov8/glasses_all/images，有3167寸照数据，再从ocr-train中选择身份证数据4000。
+http://10.10.22.220:3000/上：cv_birth_ser，cv_marriage_ser，cv_invoice_ser各获取部分数据筹够1W。
+利用模糊处理数据，生成1-2个不同程度的模糊图像类，加上原图类，进行分类训练。
+232服务器，容器pd2-cuda11，/opt/data/tb/yolov8目录下进行训练，
+镜像如果重启过，需要先安装pip install -i https://mirrors.aliyun.com/pypi/simple/ ultralytics
+再运行：
+export LD_LIBRARY_PATH=/opt/anaconda3/lib/python3.9/site-packages/nvidia/cublas/lib/:/opt/anaconda3/pkgs/libstdcxx-ng-11.2.0-h1234567_1/lib/:$LD_LIBRARY_PATH
+初次训练和再训练如下，device设置为0，其他参数自己调。coco8.yaml用自己的，改一下名字，别覆盖现在目录下的其他文件。
+# yolo task=detect mode=train model=yolov8s.pt data=coco8.yaml epochs=100 batch=16 device=0
+# yolo task=detect mode=train model=/opt/data/tb/yolov8/runs/detect/train/weights/best.pt data=coco8.yaml epochs=50 batch=16 device=0
+# .pt转onnx，输入形状设置为任意，命令如下
+# yolo mode=export model="yolov8/train/weights/best.pt" format=onnx dynamic=True
+最好测试一下模型转换前后输入输出是否不同。
+以上是目标检测实际训练命令。
+然后收集大量的数据集（10W）, 用上述训练好的模型进行，进行删选，清晰度得分高的留下。
+
+
+docker exec -it bash xxx
+
+训练：yolo classify train data=dim_class_data model=runs/classify/train-dimclass/weights/last.pt epochs=300 imgsz=640 workers=8 name=train-dimclass resume=true
+
+转模型：yolo export model=runs\classify\train-dimclass\weights\best.pt format=onnx dynamic=True
+
+预测：yolo predict task=classify model=runs\classify\train-dimclass\weights\best.onnx imgsz=224 source=runs\classify\train-dimclass\weights\zc.jpg
+
+10w迭代训练命令：yolo classify train data=10w_dim_data model=runs/classify/train-dimclass/weights/best.pt epochs=300 imgsz=640 name='train-10wdimclass' workers=8
