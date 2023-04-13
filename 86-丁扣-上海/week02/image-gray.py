@@ -85,17 +85,17 @@ class ImageFactory:
         plt.imshow(img_binary, cmap='gray')
         plt.title("skimage二值化展示")
 
-    def img_binary_by_cv2_gray(self):
-        """ 自己构思了使用了均值 进行二值化 """
-        img = self.cv2_img
-        img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)  # cv2 调包使用
-        t1 = img_gray.flatten()  # 降维
-        avg1 = t1.sum() / len(t1)
-        # avg1 = 130
-        img_cv2_binary = np.where(img_gray >= avg1, 1, 0)
-        plt.subplot(236)
-        plt.imshow(img_cv2_binary, cmap='gray')
-        plt.title("cv2均值二值化化展示")
+    # def img_binary_by_cv2_gray(self):
+    #     """ 自己构思了使用了均值 进行二值化 """
+    #     img = self.cv2_img
+    #     img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)  # cv2 调包使用
+    #     t1 = img_gray.flatten()  # 降维
+    #     avg1 = t1.sum() / len(t1)
+    #     # avg1 = 130
+    #     img_cv2_binary = np.where(img_gray >= avg1, 1, 0)
+    #     plt.subplot(236)
+    #     plt.imshow(img_cv2_binary, cmap='gray')
+    #     plt.title("cv2均值二值化化展示")
 
     def show(self):
         plt.show()
@@ -110,7 +110,7 @@ if __name__ == '__main__':
     imf.image_gray_by_skimage()  # bgr2gray 处理图片灰度化
     imf.img_binary_analysis_code()  # 二值化 底层原理解析
     imf.img_binary_by_gray()  # rgb2gray 二值化
-    imf.img_binary_by_cv2_gray()  # 自己构思了使用了均值 进行二值化，暂时不可取，还需调参数
+    # imf.img_binary_by_cv2_gray()  # 自己构思了使用了均值 进行二值化，暂时不可取，还需调参数
     imf.show()
     pass
 
