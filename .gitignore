@@ -15,4 +15,5 @@ test/*
 tmp/*
 .DS_Store
 *.log
+*.gitignore
 
