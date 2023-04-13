@@ -7,6 +7,7 @@
 import cv2
 from PIL import Image
 
+
 # 加载RGB图像
 img = cv2.imread("pic/1.png")
 # 将RGB图像转换为灰度图像
