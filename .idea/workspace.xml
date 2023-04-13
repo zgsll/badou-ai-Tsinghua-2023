@@ -155,6 +155,7 @@
       <workItem from="1681220609053" duration="813000" />
       <workItem from="1681287876250" duration="585000" />
       <workItem from="1681305527595" duration="5402000" />
+      <workItem from="1681352989592" duration="732000" />
     </task>
     <servers />
   </component>
@@ -176,6 +177,6 @@
     <SUITE FILE_PATH="coverage/badou_ai_Tsinghua_2023$test.coverage" NAME="test Coverage Results" MODIFIED="1681137245888" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/86-丁扣-上海/week02" />
     <SUITE FILE_PATH="coverage/badou_ai_Tsinghua_2023$test_image_gray.coverage" NAME="test_image_gray Coverage Results" MODIFIED="1681138632775" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/86-丁扣-上海/week02" />
     <SUITE FILE_PATH="coverage/badou_ai_Tsinghua_2023$myself_image_gray.coverage" NAME="myself_image_gray Coverage Results" MODIFIED="1681288083123" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/86-丁扣-上海/week02" />
-    <SUITE FILE_PATH="coverage/badou_ai_Tsinghua_2023$image_gray.coverage" NAME="image-gray Coverage Results" MODIFIED="1681310645355" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/86-丁扣-上海/week02" />
+    <SUITE FILE_PATH="coverage/badou_ai_Tsinghua_2023$image_gray.coverage" NAME="image-gray Coverage Results" MODIFIED="1681353083567" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/86-丁扣-上海/week02" />
   </component>
 </project>
