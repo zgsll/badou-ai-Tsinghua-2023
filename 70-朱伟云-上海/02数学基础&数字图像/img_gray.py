@@ -17,6 +17,7 @@ for i in range(img.width):
         else:
             img.putpixel((i, j), 255)
 
+            
 #保存结果
 img.save("pic/1-l.png")
 
