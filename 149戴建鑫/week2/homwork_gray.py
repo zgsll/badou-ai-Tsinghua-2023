@@ -30,3 +30,23 @@ img_gray3 = rgb2gray(img)#通过skimage实现
 plt.subplot(222)
 plt.imshow(img_gray3), cmap='gray')
 print(img_gray3)
+
+
+#二值化算法实现
+img_binary = np.zeros([h,w],img_gray.dtype)
+rows, cols = img_binary.shape
+for i in range(rows):
+    for j in range(cols):
+        if (img_gray[i, j] <= 127):
+            img_binary[i, j] = 0
+        else:
+            img_binary[i, j] = 255
+plt.subplot(223)
+plt.imshow(img_binary, cmap='gray')
+
+
+#接口实现二值化
+ret, img_binary2 = cv2.threshold(img_gray, 127, 255, cv2.THRESH_BINARY)
+plt.subplot(234)
+plt.imshow(img_binary2, cmap='binary')
+plt.show()
